@@ -7,8 +7,7 @@
   margin: 0;
   padding: 0;
 }
-body {
-}
+body {}
 .container {
   max-width: 1200px;
   padding: 0 25px;
@@ -27,6 +26,7 @@ header {
   position: absolute;
   top: 25px;
   background: transparent;
+  transition:all 0.25s ease-in-out
 }
 header .container {
   width: 100%;
@@ -135,7 +135,8 @@ section.banner {
   padding: 50px 10px 0;
 }
 #main .container {
-  padding: 40px 10px;
+  padding-top: 40px;
+  padding-bottom:40px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 50px;
@@ -293,6 +294,63 @@ footer p a {
 footer p a:hover {
   color: #999;
 }
+/* generic css styling 44444444444444444444444444444*/
+header.head-generic {
+  position: fixed;
+  top:0;
+  background: #333;
+  padding: 15px 0;
+}
+.main-generic {
+  padding: 150px 0 50px;
+}
+.main-generic h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.main-generic > p {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  line-height: 1.6;
+}
+.main-generic .container {
+  margin-top: 70px;
+  display: grid;
+  grid-template-areas: "col1" "col2" "col3";
+  gap: 25px;
+}
+.main-generic .col1 {
+  grid-area: col1;
+  text-align: center;
+}
+.main-generic .col2 {
+  grid-area: col2;
+}
+.main-generic .col3 {
+  grid-area: col3;
+  margin-top:-25px
+}
+.main-generic img {
+  border-radius: 50%;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 85%;
+  background: #fff;
+}
+.main-generic .col2 h3 {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+.main-generic .container p {
+  font-size: 1.1rem;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom:25px
+}
 
 /* Media Query ....................................*/
 @media (min-width: 480px) {
@@ -343,6 +401,17 @@ footer p a:hover {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 35px;
   }
+  .main-generic .container {
+    grid-template-areas: "col2 col1" "col3 col3";
+    gap: 35px;
+  }
+  .main-generic > p {
+    font-size: 1.5rem;
+  }
+  .main-generic img {
+    width: 90%;
+    text-align: right;
+  }
 }
 @media (min-width: 900px) {
   .container {
@@ -377,5 +446,8 @@ footer p a:hover {
   #main .three .container p {
     font-size: 1.2rem;
     margin: 35px 0 45px;
+  }
+  .main-generic .container {
+    gap: 45px;
   }
 }
